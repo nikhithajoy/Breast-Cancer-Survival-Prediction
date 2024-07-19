@@ -10,7 +10,7 @@ from sklearn.impute import KNNImputer
 from sklearn.decomposition import PCA
 import joblib
 
-# ***************************************************************************
+# *************************************************************************************************************************************
 
 # Load the trained model
 model_clinical = joblib.load('models/voting_classifier_model_clinical_78.pkl')
@@ -18,7 +18,7 @@ model_relevant = joblib.load('models/gb_model_relevant_78.pkl')
 
 
 
-# ***************************************************************************
+# *************************************************************************************************************************************
 
 @st.cache_data
 def get_img_as_base64(file):
@@ -93,13 +93,16 @@ def home():
     st.write("##                                                             ")
     st.write("##                                                             ")
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     
-    if col1.button('Predict with Clinical Attributes'):
+    if col1.button('Predict With Clinical Attributes'):
         st.session_state.page = 'clinical'
     
-    if col2.button('Predict with Relevant Features'):
+    if col2.button('Predict With Relevant Attributes'):
         st.session_state.page = 'relevant'
+
+    if col3.button('Click Here To Know More About The Models'):
+        st.session_state.page = 'about'
 
 # *************************************************************************************************************************************
 
@@ -622,6 +625,48 @@ def relevant():
 
 # *************************************************************************************************************************************
 
+def about():
+    st.title("About This App")
+
+    st.write(
+        """
+        ### Model Descriptions
+
+        This web app provides predictions on breast cancer survival using two different models. Here's a brief overview of each model:
+
+        #### 1. Predict with Clinical Attributes
+
+        **Voting Classifier Model:**
+        The Voting Classifier is an ensemble learning technique that combines the predictions of multiple base classifiers to improve accuracy and robustness. In this app, we use a Voting Classifier with the following base models:
+        
+        - **Logistic Regression**: A statistical model that estimates the probability of a binary outcome based on one or more predictor variables.
+        - **Random Forest Classifier**: An ensemble method that builds multiple decision trees and merges their results for improved accuracy and control overfitting.
+        - **Support Vector Classifier (SVC)**: A model that finds the optimal hyperplane to separate classes in the feature space, using kernel functions to handle non-linear relationships.
+
+        This Voting Classifier combines the predictions from these three models using soft voting (probability-based) to provide a final prediction. It has achieved an accuracy of **78%** on the test data.
+
+        #### 2. Predict with Relevant Attributes
+
+        **Gradient Boosting Model**
+        Gradient Boosting is an ensemble technique that builds a series of weak learners (typically decision trees) sequentially. Each new model corrects the errors of the previous one, which leads to a powerful predictive model. In this app, we use Gradient Boosting to leverage relevant attributes for making predictions.
+
+        This model also achieved an accuracy of **78%** on the test data, demonstrating its effectiveness in handling the relevant features for breast cancer survival prediction.
+
+        ### How This App Works
+
+        - **Predict with Clinical Attributes**: Select this option to use the Voting Classifier model, which considers clinical attributes for making predictions.
+        - **Predict with Relevant Attributes**: Select this option to use the Gradient Boosting model, which leverages a subset of relevant attributes for predictions.
+
+        
+        """
+    )
+
+    # Button to go back to the home page
+    if st.button('Back to Home'):
+        st.session_state.page = 'home'
+
+# *************************************************************************************************************************************
+
 # Main navigation logic
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
@@ -632,3 +677,5 @@ elif st.session_state.page == 'clinical':
     clinical()
 elif st.session_state.page == 'relevant':
     relevant()
+elif st.session_state.page == 'about':
+    about()

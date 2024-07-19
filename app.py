@@ -10,7 +10,7 @@ from sklearn.impute import KNNImputer
 from sklearn.decomposition import PCA
 import joblib
 
-# *************************************************************************************************************************************
+# ***************************************************************************
 
 # Load the trained model
 model_clinical = joblib.load('models/voting_classifier_model_clinical_78.pkl')
@@ -18,7 +18,7 @@ model_relevant = joblib.load('models/gb_model_relevant_78.pkl')
 
 
 
-# *************************************************************************************************************************************
+# ***************************************************************************
 
 @st.cache_data
 def get_img_as_base64(file):

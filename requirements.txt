@@ -1,0 +1,6 @@
+streamlit
+pandas
+PIL
+base64
+scikit-learn
+joblib

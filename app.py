@@ -227,8 +227,8 @@ def clinical():
     # Preprocess user input including PCA
     df_processed = preprocess_input(df)
 
-    # Display processed input
-    st.subheader('Processed User Input (after PCA)')
+    # Display User input
+    st.subheader('User Input Values')
     st.write(df)
 
     # Predict
@@ -606,7 +606,7 @@ def relevant():
     df_processed = preprocess_input(df)
 
     # Display processed input
-    st.subheader('Processed User Input (after PCA)')
+    st.subheader('User Input Values')
     st.write(df)
 
     # Predict

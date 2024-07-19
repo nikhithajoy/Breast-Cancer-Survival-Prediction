@@ -15,7 +15,6 @@ import joblib
 # Load the trained model
 model_clinical = joblib.load('models/voting_classifier_model_clinical_78.pkl')
 model_relevant = joblib.load('models/gb_model_relevant_78.pkl')
-model_all = joblib.load('models/gb_model_all_78.pkl')
 
 
 
@@ -94,16 +93,13 @@ def home():
     st.write("##                                                             ")
     st.write("##                                                             ")
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     if col1.button('Predict with Clinical Attributes'):
         st.session_state.page = 'clinical'
     
     if col2.button('Predict with Relevant Features'):
         st.session_state.page = 'relevant'
-    
-    if col3.button('Predict with All Features (Clinical and Genetical)'):
-        st.session_state.page = 'all'
 
 # *************************************************************************************************************************************
 
@@ -623,12 +619,7 @@ def relevant():
     if st.button('Back to Home'):
         st.session_state.page = 'home'
 
-# *************************************************************************************************************************************
 
-# Both Clinical and Genetical Features page
-def all():
-    #pass
-    return 1
 # *************************************************************************************************************************************
 
 # Main navigation logic
@@ -641,5 +632,3 @@ elif st.session_state.page == 'clinical':
     clinical()
 elif st.session_state.page == 'relevant':
     relevant()
-elif st.session_state.page == 'all':
-    all()

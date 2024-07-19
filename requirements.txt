@@ -1,6 +1,6 @@
 streamlit
 pandas
-PIL
+pillow
 base64
 scikit-learn
 joblib

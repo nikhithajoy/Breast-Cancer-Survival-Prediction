@@ -56,5 +56,5 @@ An "About the Model" section provides detailed information about the models, inc
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-~git clone https://github.com/yourusername/breast-cancer-survival-prediction.git~
+~~~git clone https://github.com/yourusername/breast-cancer-survival-prediction.git~~~
 

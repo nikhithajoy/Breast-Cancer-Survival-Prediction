@@ -51,6 +51,7 @@ The web application, developed using Streamlit, provides two main prediction opt
 Prediction with Clinical Attributes Only: Allows users to input clinical attributes to predict overall survival.
 Prediction with Relevant Attributes Only: Allows users to input a broader set of attributes, including those identified through correlation analysis.
 An "About the Model" section provides detailed information about the models, including accuracy scores and model details, helping users understand and trust the predictions.
+You can access the deployed web application [here](#usage).
 
 ## Installation
 To run this project locally, follow these steps:

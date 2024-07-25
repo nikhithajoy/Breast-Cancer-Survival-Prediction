@@ -56,5 +56,34 @@ An "About the Model" section provides detailed information about the models, inc
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-~~~git clone https://github.com/yourusername/breast-cancer-survival-prediction.git~~~
+~~~
+git clone https://github.com/yourusername/breast-cancer-survival-prediction.git
+~~~
+2. Navigate to the project directory:
+~~~
+cd breast-cancer-survival-prediction
+~~~
+3. Create a virtual environment:
+~~~
+python -m venv venv
+~~~
+4. Activate the virtual environment:
+* On windows:
+  ~~~
+  venv\Scripts\activate
+  ~~~
+* On macOS/Linux
+  ~~~
+  source venv/bin/activate
+  ~~~
+5. Install the required packages:
+~~~
+pip install -r requirements.txt
+~~~
+
+## Usage
+To run the Streamlit web application:
+~~~
+streamlit run app.py
+~~~
 

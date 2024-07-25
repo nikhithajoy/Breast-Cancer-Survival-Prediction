@@ -3,6 +3,17 @@
 ## Project Overview
 This project aims to predict the survival of breast cancer patients using the METABRIC dataset. The dataset includes clinical attributes, mRNA levels, and gene mutations for 1904 patients. We utilized various machine learning techniques to preprocess the data, select relevant features, and train predictive models. The final models are deployed as a web application using Streamlit.
 
+## Table of Contents
+[Project Overview](#project-overview)
+[Dataset](#dataset)
+[Data Preprocessing](#data-preprocessing)
+[Feature Selection](#feature-selection)
+[Model Training](#model-training)
+[Model Deployment](model-deployment)
+[Web Application](#web-application)
+[Installation](#installation)
+[Usage](#usage)
+
 ## Dataset
 The METABRIC dataset, published in Nature Communications, was collected by Professor Carlos Caldas and Professor Sam Aparicio. The dataset includes:
 * Clinical attributes

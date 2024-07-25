@@ -12,7 +12,7 @@ This project aims to predict the survival of breast cancer patients using the ME
 * [Model Deployment](model-deployment)
 * [Web Application](#web-application)
 * [Installation](#installation)
-*[Usage](#usage)
+* [Usage](#usage)
 
 ## Dataset
 The METABRIC dataset, published in Nature Communications, was collected by Professor Carlos Caldas and Professor Sam Aparicio. The dataset includes:
